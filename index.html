@@ -1,0 +1,41 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <title>Bootstrap Example</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      
+      
+    </head>
+<body>
+    <div class="background" style="perspective-origin: -18.025px 14.15px;">
+        <h1 class="plax text">Hello.</h1>
+        <img class="plax two" src="http://www.etiennegodiard.com/wp-content/uploads/2017/06/YokaVendredi-copie-min.png">
+        <img class="plax one" src="http://www.etiennegodiard.com/wp-content/uploads/2017/04/Yokaombre5.png">
+      </div>
+    <script type="text/javascript">   
+let bg = document.querySelector('.background');
+  let rect = bg.getBoundingClientRect();
+  let midX = rect.left + rect.width / 2;
+  let midY = rect.top + rect.height / 2;
+
+let parallax = (e) => {
+
+  let dx = e.clientX - midX;
+  let dy = e.clientY - midY;
+
+  let mult = -0.5;
+  let perspective = `${dx * mult}px ${dy * mult}px`;
+  bg.style.perspectiveOrigin = perspective;
+}
+
+document.addEventListener("mousemove", parallax);
+    </script>
+
+
+
+
+</body>
+</html>
